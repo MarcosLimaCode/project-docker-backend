@@ -1,21 +1,20 @@
-**- Para subir o projeto utilize o comando para criar a imagem:
-**
+# Projeto Docker
+
+## **- Para subir o projeto utilize o comando para criar a imagem:**
 
 ```javascript
 docker build -t backend .
 
 ```
 
-**- Depois crie uma network com o comando:
-**
+## **- Depois crie uma network com o comando:**
 
 ```javascript
 docker network create mynetwork
 
 ```
 
-**- Utilize o comando abaixo para subir o Postgres:
-**
+## **- Utilize o comando abaixo para subir o Postgres:**
 
 ```javascript
 docker run -d \
@@ -27,8 +26,7 @@ postgres
 
 ```
 
-**- E por fim, construa o container com o comando:
-**
+## **- E por fim, construa o container com o comando:**
 
 ```javascript
 docker run -d \
@@ -41,8 +39,7 @@ backend
 
 ---
 
-**Ou utilize o Docker compose com o comando:
-**
+## **Ou utilize o Docker compose com o comando:**
 
 ```javascript
 docker compose up -d
