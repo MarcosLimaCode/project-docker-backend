@@ -45,3 +45,12 @@ backend
 docker compose up -d
 
 ```
+
+---
+
+## Comando via Docker Hub:
+
+```javascript
+docker push mrcoosv/project-docker-backend:tagname
+
+```
