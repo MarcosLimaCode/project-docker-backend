@@ -1,4 +1,4 @@
-name: Pipeline Automatizado
+name: Pipeline
 on:
   push:
     branches:
