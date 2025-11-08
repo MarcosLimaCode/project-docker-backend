@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres
+    container_name: mypostgres
+    ports:
+      - 5433:5432
+    networks:
+      - mynetwork
+    env_file:
+      - .env
+    volumes:
+      - myvolume:/var/lib/postgres/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -q -d postgres -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  backend:
+    image: backend
+    container_name: backend
+    build: .
+    ports:
+      - 5000:5000
+    networks:
+      - mynetwork
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    ports:
+      - 8080:80
+    networks:
+      - mynetwork
+    env_file:
+      - .env
+
+networks:
+  mynetwork:
+    name: mynetwork
+
+volumes:
+  myvolume:
