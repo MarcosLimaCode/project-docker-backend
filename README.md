@@ -23,7 +23,6 @@ docker run -d \
  -p 5433:5432 \
  -e POSTGRES_PASSWORD=postgres \
 postgres
-
 ```
 
 ## - E por fim, construa o container com o comando:
